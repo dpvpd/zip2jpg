@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import shutil
+import shutil, sys
 from PyQt5 import QtCore, QtWidgets
 
 _translate = QtCore.QCoreApplication.translate
@@ -39,7 +39,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.pushButton.clicked.connect(self.selectjpg)
         self.pushButton_2.clicked.connect(self.selectzip)
-        self.pushButton_3.clicked.connect(exit)
+        self.pushButton_3.clicked.connect(sys.exit)
         self.pushButton_4.clicked.connect(self.run)
 
         self.setWindowTitle(_translate("MainWindow", "zip2jpg"))
@@ -80,7 +80,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     ui = Ui_MainWindow()
     sys.exit(app.exec_())
